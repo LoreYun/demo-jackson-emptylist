@@ -20,6 +20,7 @@ import java.util.List;
 @Primary
 public class CustomObjectMapper extends ObjectMapper {
 	private static final long serialVersionUID = 1L;
+	private static final String defaultNullValue = "";
 
 	public CustomObjectMapper() {
 		super();
@@ -28,7 +29,7 @@ public class CustomObjectMapper extends ObjectMapper {
 		this.getSerializerProvider().setNullValueSerializer(new JsonSerializer<Object>() {
 			@Override
 			public void serialize(Object value, JsonGenerator jg, SerializerProvider sp) throws IOException, JsonProcessingException {
-				jg.writeString("");
+				jg.writeString(defaultNullValue);
 			}
 		});
 

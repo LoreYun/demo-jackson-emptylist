@@ -15,11 +15,8 @@ import java.io.IOException;
 public class MyNullArrayJsonSerializer extends JsonSerializer<Object> {
 	@Override
 	public void serialize(Object value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
-		if (value == null) {
-			jgen.writeStartArray();
-			jgen.writeEndArray();
-		} else {
-			jgen.writeObject(value);
-		}
+		//value always be null
+		jgen.writeStartArray();
+		jgen.writeEndArray();
 	}
 }
