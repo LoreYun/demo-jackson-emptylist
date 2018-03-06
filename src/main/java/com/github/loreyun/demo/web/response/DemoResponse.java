@@ -7,7 +7,7 @@ import java.util.List;
  * @Date: 2018/3/6 9:50
  * @Description:
  */
-public class DemoRespose {
+public class DemoResponse {
 	private List emptyList;
 
 	public List getEmptyList() {

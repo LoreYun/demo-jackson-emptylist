@@ -1,6 +1,6 @@
 package com.github.loreyun.demo.web;
 
-import com.github.loreyun.demo.web.response.DemoRespose;
+import com.github.loreyun.demo.web.response.DemoResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -16,10 +16,10 @@ public class DemoController {
 
 
 	@RequestMapping(value = "/emptyListTest", method = RequestMethod.GET)
-	public ResponseEntity<DemoRespose> emptyListTest() {
+	public ResponseEntity<DemoResponse> emptyListTest() {
 		logger.debug("===DemoController - / GET emptyListTest");
-		DemoRespose respose = new DemoRespose();
-		return new ResponseEntity(respose, HttpStatus.OK);
+		DemoResponse response = new DemoResponse();
+		return new ResponseEntity(response, HttpStatus.OK);
 	}
 }
 
