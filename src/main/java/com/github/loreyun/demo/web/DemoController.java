@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 	private static final Logger logger = LoggerFactory.getLogger(DemoController.class);
 
-
+	/**
+	 * test url : http://localhost:8989/demo/emptyListTest
+	 * @return
+	 */
 	@RequestMapping(value = "/emptyListTest", method = RequestMethod.GET)
 	public ResponseEntity<DemoResponse> emptyListTest() {
 		logger.debug("===DemoController - / GET emptyListTest");
