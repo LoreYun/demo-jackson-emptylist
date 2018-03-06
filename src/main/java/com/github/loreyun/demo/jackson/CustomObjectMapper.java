@@ -23,7 +23,7 @@ public class CustomObjectMapper extends ObjectMapper {
 
 	public CustomObjectMapper() {
 		super();
-		 //set null to ""
+		//set null to ""
 		//but empty list  need convert to []
 		this.getSerializerProvider().setNullValueSerializer(new JsonSerializer<Object>() {
 			@Override
@@ -31,6 +31,13 @@ public class CustomObjectMapper extends ObjectMapper {
 				jg.writeString("");
 			}
 		});
+
+		//solution 1 : The list in HashMap can't convert to []
+		//https://www.cnblogs.com/lic309/p/5048631.html
+		this.setSerializerFactory(this.getSerializerFactory().withSerializerModifier(new MyBeanSerializerModifier()));
 	}
-	
+
+	//solution 2: write in kotlin, I can't rewrite it in Java
+	//https://github.com/FasterXML/jackson-databind/issues/347
+
 }
